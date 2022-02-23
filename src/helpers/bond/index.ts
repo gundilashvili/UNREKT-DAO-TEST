@@ -25,21 +25,21 @@ export const mim = new StableBond({
     tokensInStrategy: "0",
 });
 
-// export const wavax = new CustomBond({
-//     name: "wavax",
-//     displayName: "wAVAX",
-//     bondToken: "AVAX",
-//     bondIconSvg: AvaxIcon,
-//     bondContractABI: WavaxBondContract,
-//     reserveContractAbi: StableReserveContract,
-//     networkAddrs: {
-//         [Networks.AVAX]: {
-//             bondAddress: "0xE02B1AA2c4BE73093BE79d763fdFFC0E3cf67318",
-//             reserveAddress: "0xb31f66aa3c1e785363f0875a1b74e27b85fd66c7",
-//         },
-//     },
-//     tokensInStrategy: "756916000000000000000000",
-// });
+export const wavax = new CustomBond({
+    name: "wavax",
+    displayName: "wAVAX",
+    bondToken: "AVAX",
+    bondIconSvg: AvaxIcon,
+    bondContractABI: WavaxBondContract,
+    reserveContractAbi: StableReserveContract,
+    networkAddrs: {
+        [Networks.AVAX]: {
+            bondAddress: "0x6CbDd4B4078f0A3f6f38779fCf5DF9B0D7a571DA",
+            reserveAddress: "0xb31f66aa3c1e785363f0875a1b74e27b85fd66c7",
+        },
+    },
+    tokensInStrategy: "0",
+});
 
 export const mimTime = new LPBond({
     name: "mim_time_lp",
@@ -74,4 +74,4 @@ export const mimTime = new LPBond({
 // });
 
 // export default [mim, wavax, mimTime, avaxTime];
-export default [mim, mimTime];
+export default [mim, wavax, mimTime];

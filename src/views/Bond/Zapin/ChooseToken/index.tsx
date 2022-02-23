@@ -10,6 +10,7 @@ import useTokens, { IAllTokenData } from "../../../../hooks/tokens";
 import { trim } from "../../../../helpers";
 import { IAllBondData } from "../../../../hooks/bonds";
 // import { mim, wavax } from "../../../../helpers/bond";
+import { wavax } from "../../../../helpers/bond";
 import { mim } from "../../../../helpers/bond";
 import { mim as mimToken, wavax as wavaxToken } from "../../../../helpers/tokens";
 
@@ -44,9 +45,9 @@ function ChooseToken({ open, handleClose, handleSelect, bond }: IChooseTokenProp
             lpFilter = mimToken.address !== address;
         }
 
-        // if (bond.name === wavax.name) {
-        //     lpFilter = isAvax ? false : wavaxToken.address !== address;
-        // }
+        if (bond.name === wavax.name) {
+            lpFilter = isAvax ? false : wavaxToken.address !== address;
+        }
 
         return nameTest && addressTest && lpFilter;
     });

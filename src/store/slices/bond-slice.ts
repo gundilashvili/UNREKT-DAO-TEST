@@ -11,6 +11,7 @@ import { Networks } from "../../constants/blockchain";
 import { getBondCalculator } from "../../helpers/bond-calculator";
 import { RootState } from "../store";
 // import { avaxTime, wavax } from "../../helpers/bond";
+import { wavax } from "../../helpers/bond";
 import { error, warning, success, info } from "../slices/messages-slice";
 import { messages } from "../../constants/messages";
 import { getGasPrice } from "../../helpers/get-gas-price";
@@ -174,10 +175,10 @@ export const calcBondDetails = createAsyncThunk("bonding/calcBondDetails", async
         }
         purchased = purchased / Math.pow(10, 18);
 
-        // if (bond.name === wavax.name) {
-        //     const avaxPrice = getTokenPrice("AVAX");
-        //     purchased = purchased * avaxPrice;
-        // }
+        if (bond.name === wavax.name) {
+            const avaxPrice = getTokenPrice("AVAX");
+            purchased = purchased * avaxPrice;
+        }
     }
 
     return {
